@@ -48,3 +48,9 @@ stages:
          repository: 'premajanakumar/mytestrepo'
          command: 'buildAndPush'
          Dockerfile: '**/Dockerfile'
+            
+     - task: AzureWebAppContainer@1
+       inputs:
+         azureSubscription: 'Prema-test-subscription(545e669b-7024-4ced-a391-f9e94ce0ca8c)'
+         appName: 'test-prema'
+         containers: 'premajanakumar/mytestrepo:latest'
